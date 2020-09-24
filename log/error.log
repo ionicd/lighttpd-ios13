@@ -1,0 +1,11 @@
+
+2020-06-05 09:37:50: (server.c.1457) server started (lighttpd/1.4.52) 
+2020-06-05 09:37:50: (gw_backend.c.475) unlink /tmp/php.socket-0 after connect failed: Connection refused 
+2020-06-05 09:37:50: (gw_backend.c.475) unlink /tmp/php.socket-1 after connect failed: Connection refused 
+2020-06-05 09:37:50: (gw_backend.c.475) unlink /tmp/php.socket-2 after connect failed: Connection refused 
+2020-06-05 09:37:50: (gw_backend.c.475) unlink /tmp/php.socket-3 after connect failed: Connection refused 
+2020-06-05 09:38:36: (server.c.1457) server started (lighttpd/1.4.52) 
+2020-06-05 09:38:36: (gw_backend.c.475) unlink /tmp/php.socket-0 after connect failed: Connection refused 
+2020-06-05 09:38:36: (gw_backend.c.475) unlink /tmp/php.socket-1 after connect failed: Connection refused 
+2020-06-05 09:38:36: (gw_backend.c.475) unlink /tmp/php.socket-2 after connect failed: Connection refused 
+2020-06-05 09:38:36: (gw_backend.c.475) unlink /tmp/php.socket-3 after connect failed: Connection refused 

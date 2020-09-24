@@ -1,0 +1,50 @@
+#!/bin/bash
+
+f_stop() {
+PIDS=$(ps aux | grep lighttpd | grep -v grep | gawk '{ print $2 }')
+
+if [ ! -z "${PIDS}" ]; then
+  for PID in ${PIDS}; do kill -9 $PID; done
+fi
+}
+
+f_start() {
+lighttpd -f /var/mobile/lighttpd/conf/lighttpd.conf
+}
+
+f_status() {
+CHECK_PID=$(ps aux | grep lighttpd | grep -v grep | grep -v php | gawk '{ print $2 }')
+
+if [ ! -z "${CHECK_PID}" ]; then
+  echo "lighttpd is running! ["${CHECK_PID}"]"
+else
+  echo "lighttpd is stopped!"
+fi
+}
+
+case $1 in
+    "status")
+        f_status
+        ;;
+    "start")
+        f_start
+        f_status
+        ;;
+    "stop")
+        f_stop
+        f_status
+        ;;
+    "restart")
+        f_stop
+        f_status
+        sleep 2
+        f_start
+        f_status
+        ;;
+    *)
+        echo "Unknown argument: $1"
+        echo "Supported: start, stop, restart, status"
+        ;;
+esac
+exit 0
+
